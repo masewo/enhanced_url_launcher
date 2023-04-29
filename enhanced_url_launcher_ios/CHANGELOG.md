@@ -1,3 +1,7 @@
+## 6.1.5
+
+* Optimizes pub.dev score
+
 ## 6.1.4
 
 * Updates pigeon to fix warnings with clang 15.

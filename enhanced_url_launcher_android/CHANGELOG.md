@@ -1,3 +1,7 @@
+## 6.0.33
+
+* Optimizes pub.dev score
+
 ## 6.0.32
 
 * Updates gradle, AGP and fixes some lint errors.

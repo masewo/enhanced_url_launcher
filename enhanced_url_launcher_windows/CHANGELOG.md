@@ -1,3 +1,7 @@
+## 3.0.7
+
+* Optimizes pub.dev score
+
 ## 3.0.6
 
 * Sets a cmake_policy compatibility version to fix build warnings.

@@ -1,3 +1,7 @@
+## 3.0.6
+
+* Optimizes pub.dev score
+
 ## 3.0.5
 
 * Converts method channel to Pigeon.

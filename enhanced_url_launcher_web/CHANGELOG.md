@@ -2,6 +2,11 @@
 
 * Updates minimum Flutter version to 3.3.
 
+## 2.0.17
+
+* Adds interface to retrieve optimal location for a new window on web platform
+* Optimizes pub.dev score
+
 ## 2.0.16
 
 * Clarifies explanation of endorsement in README.

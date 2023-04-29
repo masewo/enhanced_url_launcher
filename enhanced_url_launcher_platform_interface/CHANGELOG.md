@@ -3,6 +3,11 @@
 * Updates minimum Flutter version to 3.3.
 * Aligns Dart and Flutter SDK constraints.
 
+## 2.1.3
+
+* Adds interface to retrieve optimal location for a new window on web platform
+* Optimizes pub.dev score
+
 ## 2.1.2
 
 * Updates links for the merge of flutter/plugins into flutter/packages.
