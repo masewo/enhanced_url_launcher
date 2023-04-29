@@ -1,7 +1,8 @@
 name: enhanced_url_launcher_platform_interface
-description: A common platform interface for the enhanced_url_launcher plugin.
-repository: https://github.com/flutter/packages/tree/main/packages/enhanced_url_launcher/enhanced_url_launcher_platform_interface
-issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+enhanced_url_launcher%22
+description: A common platform interface for the enhanced_url_launcher plugin for launching a URL. Supports
+  web, phone, SMS, and email schemes.
+repository: https://github.com/masewo/enhanced_url_launcher/tree/master/enhanced_url_launcher_platform_interface
+issue_tracker: https://github.com/masewo/enhanced_url_launcher/issues
 # NOTE: We strongly prefer non-breaking changes, even at the expense of a
 # less-clean API. See https://flutter.dev/go/platform-interface-breaking-changes
 version: 2.1.2

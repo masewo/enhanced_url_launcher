@@ -1,7 +1,8 @@
 name: enhanced_url_launcher_ios
-description: iOS implementation of the enhanced_url_launcher plugin.
-repository: https://github.com/flutter/packages/tree/main/packages/enhanced_url_launcher/enhanced_url_launcher_ios
-issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+enhanced_url_launcher%22
+description: iOS implementation of the enhanced_url_launcher plugin  for launching a URL. Supports
+  web, phone, SMS, and email schemes.
+repository: https://github.com/masewo/enhanced_url_launcher/tree/master/enhanced_url_launcher_ios
+issue_tracker: https://github.com/masewo/enhanced_url_launcher/issues
 version: 6.1.4
 
 environment:
@@ -19,8 +20,7 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  enhanced_url_launcher_platform_interface: #^2.0.3
-    path: ../enhanced_url_launcher_platform_interface
+  enhanced_url_launcher_platform_interface: ^2.0.3
 
 dev_dependencies:
   flutter_test:

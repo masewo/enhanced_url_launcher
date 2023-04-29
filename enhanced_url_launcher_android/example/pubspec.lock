@@ -139,9 +139,10 @@ packages:
   enhanced_url_launcher_platform_interface:
     dependency: "direct main"
     description:
-      path: "../../enhanced_url_launcher_platform_interface"
-      relative: true
-    source: path
+      name: enhanced_url_launcher_platform_interface
+      sha256: "80ac7d0f91b5251e1bcf416186933bc4231a3ce44ac8a2a6ec97fae5043cdde5"
+      url: "https://pub.dev"
+    source: hosted
     version: "2.1.2"
   fake_async:
     dependency: transitive

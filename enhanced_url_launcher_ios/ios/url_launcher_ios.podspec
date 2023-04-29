@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A Flutter plugin for making the underlying platform (Android or iOS) launch a URL.
                        DESC
-  s.homepage         = 'https://github.com/flutter/packages/tree/main/packages/enhanced_url_launcher'
+  s.homepage         = 'https://github.com/masewo/enhanced_url_launcher/tree/master/enhanced_url_launcher'
   s.license          = { :type => 'BSD', :file => '../LICENSE' }
   s.author           = { 'Flutter Dev Team' => 'flutter-dev@googlegroups.com' }
-  s.source           = { :http => 'https://github.com/flutter/packages/tree/main/packages/enhanced_url_launcher/enhanced_url_launcher_ios' }
+  s.source           = { :http => 'https://github.com/masewo/enhanced_url_launcher/tree/master/enhanced_url_launcher_ios' }
   s.documentation_url = 'https://pub.dev/packages/enhanced_url_launcher'
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'

@@ -1,5 +1,6 @@
 name: enhanced_url_launcher_example
-description: Demonstrates the Windows implementation of the enhanced_url_launcher plugin.
+description: Demonstrates the Windows implementation of the enhanced_url_launcher plugin  for launching a URL. Supports
+  web, phone, SMS, and email schemes.
 publish_to: none
 
 environment:
@@ -9,8 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  enhanced_url_launcher_platform_interface: #^2.0.0
-    path: ../../enhanced_url_launcher_platform_interface
+  enhanced_url_launcher_platform_interface: ^2.0.0
   enhanced_url_launcher_windows:
     # When depending on this package from a real application you should use:
     #   enhanced_url_launcher_windows: ^x.y.z

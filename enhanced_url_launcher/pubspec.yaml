@@ -1,8 +1,8 @@
 name: enhanced_url_launcher
 description: Flutter plugin for launching a URL. Supports
   web, phone, SMS, and email schemes.
-repository: https://github.com/flutter/packages/tree/main/packages/enhanced_url_launcher/enhanced_url_launcher
-issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+enhanced_url_launcher%22
+repository: https://github.com/masewo/enhanced_url_launcher/tree/master/enhanced_url_launcher
+issue_tracker: https://github.com/masewo/enhanced_url_launcher/issues
 version: 6.1.10
 
 environment:
@@ -28,22 +28,15 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  enhanced_url_launcher_android: #^6.0.13
-    path: ../enhanced_url_launcher_android
-  enhanced_url_launcher_ios: #^6.0.13
-    path: ../enhanced_url_launcher_ios
+  enhanced_url_launcher_android: ^6.0.13
+  enhanced_url_launcher_ios: ^6.0.13
   # Allow either the pure-native or Dart/native hybrid versions of the desktop
   # implementations, as both are compatible.
-  enhanced_url_launcher_linux: #">=2.0.0 <4.0.0"
-    path: ../enhanced_url_launcher_linux
-  enhanced_url_launcher_macos: #">=2.0.0 <4.0.0"
-    path: ../enhanced_url_launcher_macos
-  enhanced_url_launcher_platform_interface: #^2.1.0
-    path: ../enhanced_url_launcher_platform_interface
-  enhanced_url_launcher_web: #^2.0.0
-    path: ../enhanced_url_launcher_web
-  enhanced_url_launcher_windows: #">=2.0.0 <4.0.0"
-    path: ../enhanced_url_launcher_windows
+  enhanced_url_launcher_linux: ">=2.0.0 <4.0.0"
+  enhanced_url_launcher_macos: ">=2.0.0 <4.0.0"
+  enhanced_url_launcher_platform_interface: ^2.1.0
+  enhanced_url_launcher_web: ^2.0.0
+  enhanced_url_launcher_windows: ">=2.0.0 <4.0.0"
 
 dev_dependencies:
   flutter_test:
