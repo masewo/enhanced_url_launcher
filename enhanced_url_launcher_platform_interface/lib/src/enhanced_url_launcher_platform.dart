@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:math';
 
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -105,5 +106,9 @@ abstract class UrlLauncherPlatform extends PlatformInterface {
     String? fileName,
   }) {
     throw UnimplementedError('downloadBlob() has not been implemented.');
+  }
+
+  Point getNewWindowLocation(int width, int height) {
+    throw UnimplementedError('getNewWindowLocation() has not been implemented.');
   }
 }

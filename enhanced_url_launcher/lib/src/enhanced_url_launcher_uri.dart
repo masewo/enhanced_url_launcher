@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:math';
 
 import 'package:enhanced_url_launcher_platform_interface/enhanced_url_launcher_platform_interface.dart';
 
@@ -107,4 +108,9 @@ void downloadBlob(
     endings: endings,
     fileName: fileName,
   );
+}
+
+/// For web: get the centered location for a new window
+Point getNewWindowLocation(int width, int height) {
+  return UrlLauncherPlatform.instance.getNewWindowLocation(width, height);
 }

@@ -4,6 +4,7 @@
 
 import 'dart:async';
 import 'dart:html' as html;
+import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart' show visibleForTesting;
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
@@ -120,5 +121,33 @@ class UrlLauncherPlugin extends UrlLauncherPlatform {
     if (fileName != null) anchor.setAttribute("download", fileName);
 
     anchor.click();
+  }
+
+  @override
+  math.Point getNewWindowLocation(int width, int height) {
+    var dualScreenLeft = html.window.screenLeft ?? html.window.screenX ?? 0;
+    var dualScreenTop = html.window.screenTop ?? html.window.screenY ?? 0;
+
+    var innerWidth = html.window.innerWidth ??
+        (html.document.documentElement?.clientWidth ??
+            html.window.screen?.width) ??
+        1920;
+    var innerHeight = html.window.innerHeight ??
+        (html.document.documentElement?.clientHeight ??
+            html.window.screen?.height) ??
+        1080;
+
+    var systemZoomW =
+        innerWidth / (html.window.screen?.available.width ?? 1920);
+    var systemZoomH =
+        innerHeight / (html.window.screen?.available.height ?? 1080);
+
+    var left = (innerWidth - width) / 2 / systemZoomW + dualScreenLeft;
+    var top = (innerHeight - height) / 2 / systemZoomH + dualScreenTop;
+
+    left = math.max(left, 0);
+    top = math.max(top, 0);
+
+    return math.Point(left, top);
   }
 }
