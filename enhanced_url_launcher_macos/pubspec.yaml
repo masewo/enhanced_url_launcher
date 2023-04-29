@@ -1,0 +1,30 @@
+name: enhanced_url_launcher_macos
+description: macOS implementation of the enhanced_url_launcher plugin.
+repository: https://github.com/flutter/packages/tree/main/packages/enhanced_url_launcher/enhanced_url_launcher_macos
+issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+enhanced_url_launcher%22
+version: 3.0.5
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+flutter:
+  plugin:
+    implements: enhanced_url_launcher
+    platforms:
+      macos:
+        pluginClass: UrlLauncherPlugin
+        fileName: enhanced_url_launcher_macos.dart
+        dartPluginClass: UrlLauncherMacOS
+
+dependencies:
+  flutter:
+    sdk: flutter
+  enhanced_url_launcher_platform_interface: #^2.0.3
+    path: ../enhanced_url_launcher_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pigeon: ^9.2.4
+  test: ^1.16.3
