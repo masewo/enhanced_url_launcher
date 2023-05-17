@@ -3,6 +3,10 @@
 * Updates minimum Flutter version to 3.3.
 * Aligns Dart and Flutter SDK constraints.
 
+## 6.1.12
+
+* Finalize renaming to enhanced_url_launcher
+
 ## 6.1.11
 
 * Adds interface to retrieve optimal location for a new window on web platform

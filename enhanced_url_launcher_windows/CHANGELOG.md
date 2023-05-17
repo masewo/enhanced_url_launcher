@@ -1,3 +1,7 @@
+## 3.0.8
+
+* Finalize renaming to enhanced_url_launcher
+
 ## 3.0.7
 
 * Optimizes pub.dev score

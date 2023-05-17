@@ -3,7 +3,7 @@ description: Windows implementation of the enhanced_url_launcher plugin  for lau
   web, phone, SMS, and email schemes. for launching a URL.
 repository: https://github.com/masewo/enhanced_url_launcher/tree/master/enhanced_url_launcher_windows
 issue_tracker: https://github.com/masewo/enhanced_url_launcher/issues
-version: 3.0.7
+version: 3.0.8
 
 environment:
   sdk: ">=2.17.0 <4.0.0"
