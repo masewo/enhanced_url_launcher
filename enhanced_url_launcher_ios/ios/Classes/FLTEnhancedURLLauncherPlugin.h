@@ -6,5 +6,5 @@
 
 #import "messages.g.h"
 
-@interface FLTURLLauncherPlugin : NSObject <FlutterPlugin, FULUrlLauncherApi>
+@interface FLTEnhancedURLLauncherPlugin : NSObject <FlutterPlugin, FULUrlLauncherApi>
 @end

@@ -29,9 +29,9 @@ bool _isSafariTargetTopScheme(String url) =>
 /// The web implementation of [UrlLauncherPlatform].
 ///
 /// This class implements the `package:enhanced_url_launcher` functionality for the web.
-class UrlLauncherPlugin extends UrlLauncherPlatform {
+class EnhancedUrlLauncherPlugin extends UrlLauncherPlatform {
   /// A constructor that allows tests to override the window object used by the plugin.
-  UrlLauncherPlugin({@visibleForTesting html.Window? debugWindow})
+  EnhancedUrlLauncherPlugin({@visibleForTesting html.Window? debugWindow})
       : _window = debugWindow ?? html.window {
     _isSafari = navigatorIsSafari(_window.navigator);
   }
@@ -48,7 +48,7 @@ class UrlLauncherPlugin extends UrlLauncherPlatform {
 
   /// Registers this class as the default instance of [UrlLauncherPlatform].
   static void registerWith(Registrar registrar) {
-    UrlLauncherPlatform.instance = UrlLauncherPlugin();
+    UrlLauncherPlatform.instance = EnhancedUrlLauncherPlugin();
     ui.platformViewRegistry
         .registerViewFactory(linkViewType, linkViewFactory, isVisible: false);
   }

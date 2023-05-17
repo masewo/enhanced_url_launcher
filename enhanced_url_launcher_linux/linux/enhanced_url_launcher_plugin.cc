@@ -19,7 +19,7 @@ const char kCanLaunchMethod[] = "canLaunch";
 const char kLaunchMethod[] = "launch";
 const char kUrlKey[] = "url";
 
-struct _FlUrlLauncherPlugin {
+struct _FlEnhancedUrlLauncherPlugin {
   GObject parent_instance;
 
   FlPluginRegistrar* registrar;
@@ -28,7 +28,7 @@ struct _FlUrlLauncherPlugin {
   FlMethodChannel* channel;
 };
 
-G_DEFINE_TYPE(FlUrlLauncherPlugin, fl_enhanced_url_launcher_plugin, g_object_get_type())
+G_DEFINE_TYPE(FlEnhancedUrlLauncherPlugin, fl_enhanced_url_launcher_plugin, g_object_get_type())
 
 // Gets the URL from the arguments or generates an error.
 static gchar* get_url(FlValue* args, GError** error) {
@@ -46,7 +46,7 @@ static gchar* get_url(FlValue* args, GError** error) {
 }
 
 // Checks if URI has launchable file resource.
-static gboolean can_launch_uri_with_file_resource(FlUrlLauncherPlugin* self,
+static gboolean can_launch_uri_with_file_resource(FlEnhancedUrlLauncherPlugin* self,
                                                   const gchar* url) {
   g_autoptr(GError) error = nullptr;
   g_autoptr(GFile) file = g_file_new_for_uri(url);
@@ -56,7 +56,7 @@ static gboolean can_launch_uri_with_file_resource(FlUrlLauncherPlugin* self,
 }
 
 // Called to check if a URL can be launched.
-FlMethodResponse* can_launch(FlUrlLauncherPlugin* self, FlValue* args) {
+FlMethodResponse* can_launch(FlEnhancedUrlLauncherPlugin* self, FlValue* args) {
   g_autoptr(GError) error = nullptr;
   g_autofree gchar* url = get_url(args, &error);
   if (url == nullptr) {
@@ -81,7 +81,7 @@ FlMethodResponse* can_launch(FlUrlLauncherPlugin* self, FlValue* args) {
 }
 
 // Called when a URL should launch.
-static FlMethodResponse* launch(FlUrlLauncherPlugin* self, FlValue* args) {
+static FlMethodResponse* launch(FlEnhancedUrlLauncherPlugin* self, FlValue* args) {
   g_autoptr(GError) error = nullptr;
   g_autofree gchar* url = get_url(args, &error);
   if (url == nullptr) {
@@ -111,7 +111,7 @@ static FlMethodResponse* launch(FlUrlLauncherPlugin* self, FlValue* args) {
 // Called when a method call is received from Flutter.
 static void method_call_cb(FlMethodChannel* channel, FlMethodCall* method_call,
                            gpointer user_data) {
-  FlUrlLauncherPlugin* self = FL_enhanced_url_launcher_PLUGIN(user_data);
+  FlEnhancedUrlLauncherPlugin* self = FL_enhanced_url_launcher_PLUGIN(user_data);
 
   const gchar* method = fl_method_call_get_name(method_call);
   FlValue* args = fl_method_call_get_args(method_call);
@@ -130,7 +130,7 @@ static void method_call_cb(FlMethodChannel* channel, FlMethodCall* method_call,
 }
 
 static void fl_enhanced_url_launcher_plugin_dispose(GObject* object) {
-  FlUrlLauncherPlugin* self = FL_enhanced_url_launcher_PLUGIN(object);
+  FlEnhancedUrlLauncherPlugin* self = FL_enhanced_url_launcher_PLUGIN(object);
 
   g_clear_object(&self->registrar);
   g_clear_object(&self->channel);
@@ -138,12 +138,12 @@ static void fl_enhanced_url_launcher_plugin_dispose(GObject* object) {
   G_OBJECT_CLASS(fl_enhanced_url_launcher_plugin_parent_class)->dispose(object);
 }
 
-static void fl_enhanced_url_launcher_plugin_class_init(FlUrlLauncherPluginClass* klass) {
+static void fl_enhanced_url_launcher_plugin_class_init(FlEnhancedUrlLauncherPluginClass* klass) {
   G_OBJECT_CLASS(klass)->dispose = fl_enhanced_url_launcher_plugin_dispose;
 }
 
-FlUrlLauncherPlugin* fl_enhanced_url_launcher_plugin_new(FlPluginRegistrar* registrar) {
-  FlUrlLauncherPlugin* self = FL_enhanced_url_launcher_PLUGIN(
+FlEnhancedUrlLauncherPlugin* fl_enhanced_url_launcher_plugin_new(FlPluginRegistrar* registrar) {
+  FlEnhancedUrlLauncherPlugin* self = FL_enhanced_url_launcher_PLUGIN(
       g_object_new(fl_enhanced_url_launcher_plugin_get_type(), nullptr));
 
   self->registrar = FL_PLUGIN_REGISTRAR(g_object_ref(registrar));
@@ -158,9 +158,9 @@ FlUrlLauncherPlugin* fl_enhanced_url_launcher_plugin_new(FlPluginRegistrar* regi
   return self;
 }
 
-static void fl_enhanced_url_launcher_plugin_init(FlUrlLauncherPlugin* self) {}
+static void fl_enhanced_url_launcher_plugin_init(FlEnhancedUrlLauncherPlugin* self) {}
 
 void enhanced_url_launcher_plugin_register_with_registrar(FlPluginRegistrar* registrar) {
-  FlUrlLauncherPlugin* plugin = fl_enhanced_url_launcher_plugin_new(registrar);
+  FlEnhancedUrlLauncherPlugin* plugin = fl_enhanced_url_launcher_plugin_new(registrar);
   g_object_unref(plugin);
 }

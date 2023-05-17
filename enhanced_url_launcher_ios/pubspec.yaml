@@ -14,7 +14,7 @@ flutter:
     implements: enhanced_url_launcher
     platforms:
       ios:
-        pluginClass: FLTURLLauncherPlugin
+        pluginClass: FLTEnhancedUrlLauncherPlugin
         dartPluginClass: UrlLauncherIOS
 
 dependencies:

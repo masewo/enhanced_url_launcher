@@ -14,7 +14,7 @@
 namespace enhanced_url_launcher_plugin {
 namespace test {
 
-TEST(UrlLauncherPlugin, CanLaunchSuccess) {
+TEST(EnhancedUrlLauncherPlugin, CanLaunchSuccess) {
   g_autoptr(FlValue) args = fl_value_new_map();
   fl_value_set_string_take(args, "url",
                            fl_value_new_string("https://flutter.dev"));
@@ -27,7 +27,7 @@ TEST(UrlLauncherPlugin, CanLaunchSuccess) {
                              expected));
 }
 
-TEST(UrlLauncherPlugin, CanLaunchFailureUnhandled) {
+TEST(EnhancedUrlLauncherPlugin, CanLaunchFailureUnhandled) {
   g_autoptr(FlValue) args = fl_value_new_map();
   fl_value_set_string_take(args, "url", fl_value_new_string("madeup:scheme"));
   g_autoptr(FlMethodResponse) response = can_launch(nullptr, args);
@@ -39,7 +39,7 @@ TEST(UrlLauncherPlugin, CanLaunchFailureUnhandled) {
                              expected));
 }
 
-TEST(UrlLauncherPlugin, CanLaunchFileSuccess) {
+TEST(EnhancedUrlLauncherPlugin, CanLaunchFileSuccess) {
   g_autoptr(FlValue) args = fl_value_new_map();
   fl_value_set_string_take(args, "url", fl_value_new_string("file:///"));
   g_autoptr(FlMethodResponse) response = can_launch(nullptr, args);
@@ -51,7 +51,7 @@ TEST(UrlLauncherPlugin, CanLaunchFileSuccess) {
                              expected));
 }
 
-TEST(UrlLauncherPlugin, CanLaunchFailureInvalidFileExtension) {
+TEST(EnhancedUrlLauncherPlugin, CanLaunchFailureInvalidFileExtension) {
   g_autoptr(FlValue) args = fl_value_new_map();
   fl_value_set_string_take(
       args, "url", fl_value_new_string("file:///madeup.madeupextension"));
@@ -66,7 +66,7 @@ TEST(UrlLauncherPlugin, CanLaunchFailureInvalidFileExtension) {
 
 // For consistency with the established mobile implementations,
 // an invalid URL should return false, not an error.
-TEST(UrlLauncherPlugin, CanLaunchFailureInvalidUrl) {
+TEST(EnhancedUrlLauncherPlugin, CanLaunchFailureInvalidUrl) {
   g_autoptr(FlValue) args = fl_value_new_map();
   fl_value_set_string_take(args, "url", fl_value_new_string(""));
   g_autoptr(FlMethodResponse) response = can_launch(nullptr, args);

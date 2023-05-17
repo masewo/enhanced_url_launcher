@@ -14,7 +14,7 @@ flutter:
     implements: enhanced_url_launcher
     platforms:
       linux:
-        pluginClass: UrlLauncherPlugin
+        pluginClass: EnhancedUrlLauncherPlugin
         dartPluginClass: UrlLauncherLinux
 
 dependencies:

@@ -17,10 +17,10 @@ G_BEGIN_DECLS
 #define FLUTTER_PLUGIN_EXPORT
 #endif
 
-G_DECLARE_FINAL_TYPE(FlUrlLauncherPlugin, fl_enhanced_url_launcher_plugin, FL,
+G_DECLARE_FINAL_TYPE(FlEnhancedUrlLauncherPlugin, fl_enhanced_url_launcher_plugin, FL,
                      enhanced_url_launcher_PLUGIN, GObject)
 
-FLUTTER_PLUGIN_EXPORT FlUrlLauncherPlugin* fl_enhanced_url_launcher_plugin_new(
+FLUTTER_PLUGIN_EXPORT FlEnhancedUrlLauncherPlugin* fl_enhanced_url_launcher_plugin_new(
     FlPluginRegistrar* registrar);
 
 FLUTTER_PLUGIN_EXPORT void enhanced_url_launcher_plugin_register_with_registrar(

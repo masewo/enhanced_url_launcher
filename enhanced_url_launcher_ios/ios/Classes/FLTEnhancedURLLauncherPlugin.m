@@ -4,8 +4,8 @@
 
 #import <SafariServices/SafariServices.h>
 
-#import "FLTURLLauncherPlugin.h"
-#import "FLTURLLauncherPlugin_Test.h"
+#import "FLTEnhancedURLLauncherPlugin.h"
+#import "FLTEnhancedURLLauncherPlugin_Test.h"
 #import "FULLauncher.h"
 #import "messages.g.h"
 
@@ -78,17 +78,17 @@ typedef void (^OpenInSafariVCResponse)(NSNumber *_Nullable, FlutterError *_Nulla
 
 #pragma mark -
 
-@interface FLTURLLauncherPlugin ()
+@interface FLTEnhancedURLLauncherPlugin ()
 
 @property(strong, nonatomic) FLTURLLaunchSession *currentSession;
 @property(strong, nonatomic) NSObject<FULLauncher> *launcher;
 
 @end
 
-@implementation FLTURLLauncherPlugin
+@implementation FLTEnhancedURLLauncherPlugin
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] init];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] init];
   FULUrlLauncherApiSetup(registrar.messenger, plugin);
 }
 

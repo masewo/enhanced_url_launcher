@@ -16,8 +16,8 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
  *
  * <p>Instantiate this in an add to app scenario to gracefully handle activity and context changes.
  */
-public final class UrlLauncherPlugin implements FlutterPlugin, ActivityAware {
-  private static final String TAG = "UrlLauncherPlugin";
+public final class EnhancedUrlLauncherPlugin implements FlutterPlugin, ActivityAware {
+  private static final String TAG = "EnhancedUrlLauncherPlugin";
   @Nullable private MethodCallHandlerImpl methodCallHandler;
   @Nullable private UrlLauncher urlLauncher;
 
@@ -26,7 +26,7 @@ public final class UrlLauncherPlugin implements FlutterPlugin, ActivityAware {
    * package.
    *
    * <p>Calling this automatically initializes the plugin. However plugins initialized this way
-   * won't react to changes in activity or context, unlike {@link UrlLauncherPlugin}.
+   * won't react to changes in activity or context, unlike {@link EnhancedUrlLauncherPlugin}.
    */
   @SuppressWarnings("deprecation")
   public static void registerWith(

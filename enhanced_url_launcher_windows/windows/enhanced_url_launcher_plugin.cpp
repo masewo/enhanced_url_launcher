@@ -62,23 +62,23 @@ std::string GetUrlArgument(const flutter::MethodCall<>& method_call) {
 }  // namespace
 
 // static
-void UrlLauncherPlugin::RegisterWithRegistrar(
+void EnhancedUrlLauncherPlugin::RegisterWithRegistrar(
     flutter::PluginRegistrar* registrar) {
-  std::unique_ptr<UrlLauncherPlugin> plugin =
-      std::make_unique<UrlLauncherPlugin>();
+  std::unique_ptr<EnhancedUrlLauncherPlugin> plugin =
+      std::make_unique<EnhancedUrlLauncherPlugin>();
   UrlLauncherApi::SetUp(registrar->messenger(), plugin.get());
   registrar->AddPlugin(std::move(plugin));
 }
 
-UrlLauncherPlugin::UrlLauncherPlugin()
+EnhancedUrlLauncherPlugin::EnhancedUrlLauncherPlugin()
     : system_apis_(std::make_unique<SystemApisImpl>()) {}
 
-UrlLauncherPlugin::UrlLauncherPlugin(std::unique_ptr<SystemApis> system_apis)
+EnhancedUrlLauncherPlugin::EnhancedUrlLauncherPlugin(std::unique_ptr<SystemApis> system_apis)
     : system_apis_(std::move(system_apis)) {}
 
-UrlLauncherPlugin::~UrlLauncherPlugin() = default;
+EnhancedUrlLauncherPlugin::~EnhancedUrlLauncherPlugin() = default;
 
-ErrorOr<bool> UrlLauncherPlugin::CanLaunchUrl(const std::string& url) {
+ErrorOr<bool> EnhancedUrlLauncherPlugin::CanLaunchUrl(const std::string& url) {
   size_t separator_location = url.find(":");
   if (separator_location == std::string::npos) {
     return false;
@@ -97,7 +97,7 @@ ErrorOr<bool> UrlLauncherPlugin::CanLaunchUrl(const std::string& url) {
   return has_handler;
 }
 
-std::optional<FlutterError> UrlLauncherPlugin::LaunchUrl(
+std::optional<FlutterError> EnhancedUrlLauncherPlugin::LaunchUrl(
     const std::string& url) {
   std::wstring url_wide = Utf16FromUtf8(url);
 

@@ -9,7 +9,7 @@
 
 void UrlLauncherWindowsRegisterWithRegistrar(
     FlutterDesktopPluginRegistrarRef registrar) {
-  enhanced_url_launcher_windows::UrlLauncherPlugin::RegisterWithRegistrar(
+  enhanced_url_launcher_windows::EnhancedUrlLauncherPlugin::RegisterWithRegistrar(
       flutter::PluginRegistrarManager::GetInstance()
           ->GetRegistrar<flutter::PluginRegistrarWindows>(registrar));
 }

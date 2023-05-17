@@ -32,7 +32,7 @@
 
 - (void)testCanLaunchSuccess {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
 
   FlutterError *error;
   NSNumber *result = [plugin canLaunchURL:@"good://url" error:&error];
@@ -43,7 +43,7 @@
 
 - (void)testCanLaunchFailure {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
 
   FlutterError *error;
   NSNumber *result = [plugin canLaunchURL:@"bad://url" error:&error];
@@ -55,7 +55,7 @@
 
 - (void)testCanLaunchInvalidURL {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
 
   FlutterError *error;
   NSNumber *result = [plugin canLaunchURL:@"urls can't have spaces" error:&error];
@@ -68,7 +68,7 @@
 
 - (void)testLaunchSuccess {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
   XCTestExpectation *resultExpectation = [self expectationWithDescription:@"result"];
 
   [plugin launchURL:@"good://url"
@@ -84,7 +84,7 @@
 
 - (void)testLaunchFailure {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
   XCTestExpectation *resultExpectation = [self expectationWithDescription:@"result"];
 
   [plugin launchURL:@"bad://url"
@@ -101,7 +101,7 @@
 
 - (void)testLaunchInvalidURL {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
   XCTestExpectation *resultExpectation = [self expectationWithDescription:@"result"];
 
   [plugin launchURL:@"urls can't have spaces"
@@ -120,7 +120,7 @@
 
 - (void)testLaunchWithoutUniversalLinks {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
   XCTestExpectation *resultExpectation = [self expectationWithDescription:@"result"];
 
   FlutterError *error;
@@ -138,7 +138,7 @@
 
 - (void)testLaunchWithUniversalLinks {
   FULFakeLauncher *launcher = [[FULFakeLauncher alloc] init];
-  FLTURLLauncherPlugin *plugin = [[FLTURLLauncherPlugin alloc] initWithLauncher:launcher];
+  FLTEnhancedURLLauncherPlugin *plugin = [[FLTEnhancedURLLauncherPlugin alloc] initWithLauncher:launcher];
   XCTestExpectation *resultExpectation = [self expectationWithDescription:@"result"];
 
   FlutterError *error;

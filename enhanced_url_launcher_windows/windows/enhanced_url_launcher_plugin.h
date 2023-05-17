@@ -15,22 +15,22 @@
 
 namespace enhanced_url_launcher_windows {
 
-class UrlLauncherPlugin : public flutter::Plugin, public UrlLauncherApi {
+class EnhancedUrlLauncherPlugin : public flutter::Plugin, public UrlLauncherApi {
  public:
   static void RegisterWithRegistrar(flutter::PluginRegistrar* registrar);
 
-  UrlLauncherPlugin();
+  EnhancedUrlLauncherPlugin();
 
   // Creates a plugin instance with the given SystemApi instance.
   //
   // Exists for unit testing with mock implementations.
-  UrlLauncherPlugin(std::unique_ptr<SystemApis> system_apis);
+  EnhancedUrlLauncherPlugin(std::unique_ptr<SystemApis> system_apis);
 
-  virtual ~UrlLauncherPlugin();
+  virtual ~EnhancedUrlLauncherPlugin();
 
   // Disallow copy and move.
-  UrlLauncherPlugin(const UrlLauncherPlugin&) = delete;
-  UrlLauncherPlugin& operator=(const UrlLauncherPlugin&) = delete;
+  EnhancedUrlLauncherPlugin(const EnhancedUrlLauncherPlugin&) = delete;
+  EnhancedUrlLauncherPlugin& operator=(const EnhancedUrlLauncherPlugin&) = delete;
 
   // UrlLauncherApi:
   ErrorOr<bool> CanLaunchUrl(const std::string& url) override;

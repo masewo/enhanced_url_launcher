@@ -14,7 +14,7 @@ flutter:
     implements: enhanced_url_launcher
     platforms:
       macos:
-        pluginClass: UrlLauncherPlugin
+        pluginClass: EnhancedUrlLauncherPlugin
         fileName: enhanced_url_launcher_macos.dart
         dartPluginClass: UrlLauncherMacOS
 

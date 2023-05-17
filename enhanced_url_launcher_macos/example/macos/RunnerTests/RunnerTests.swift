@@ -24,7 +24,7 @@ class StubWorkspace: SystemURLHandler {
 class RunnerTests: XCTestCase {
 
   func testCanLaunchSuccessReturnsTrue() throws {
-    let plugin = UrlLauncherPlugin()
+    let plugin = EnhancedUrlLauncherPlugin()
 
     let result = try plugin.canLaunch(url: "https://flutter.dev")
     XCTAssertNil(result.error)
@@ -32,7 +32,7 @@ class RunnerTests: XCTestCase {
   }
 
   func testCanLaunchNoAppIsAbleToOpenUrlReturnsFalse() throws {
-    let plugin = UrlLauncherPlugin()
+    let plugin = EnhancedUrlLauncherPlugin()
 
     let result = try plugin.canLaunch(url: "example://flutter.dev")
     XCTAssertNil(result.error)
@@ -40,7 +40,7 @@ class RunnerTests: XCTestCase {
   }
 
   func testCanLaunchInvalidUrlReturnsError() throws {
-    let plugin = UrlLauncherPlugin()
+    let plugin = EnhancedUrlLauncherPlugin()
 
     let result = try plugin.canLaunch(url: "invalid url")
     XCTAssertEqual(result.error, .invalidUrl)
@@ -48,7 +48,7 @@ class RunnerTests: XCTestCase {
 
   func testLaunchSuccessReturnsTrue() throws {
     let workspace = StubWorkspace()
-    let plugin = UrlLauncherPlugin(workspace)
+    let plugin = EnhancedUrlLauncherPlugin(workspace)
 
     let result = try plugin.launch(url: "https://flutter.dev")
     XCTAssertNil(result.error)
@@ -58,7 +58,7 @@ class RunnerTests: XCTestCase {
   func testLaunchNoAppIsAbleToOpenUrlReturnsFalse() throws {
     let workspace = StubWorkspace()
     workspace.isSuccessful = false
-    let plugin = UrlLauncherPlugin(workspace)
+    let plugin = EnhancedUrlLauncherPlugin(workspace)
 
     let result = try plugin.launch(url: "schemethatdoesnotexist://flutter.dev")
     XCTAssertNil(result.error)
@@ -66,7 +66,7 @@ class RunnerTests: XCTestCase {
   }
 
   func testLaunchInvalidUrlReturnsError() throws {
-    let plugin = UrlLauncherPlugin()
+    let plugin = EnhancedUrlLauncherPlugin()
 
     let result = try plugin.launch(url: "invalid url")
     XCTAssertEqual(result.error, .invalidUrl)

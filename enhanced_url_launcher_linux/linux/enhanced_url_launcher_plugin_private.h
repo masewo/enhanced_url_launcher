@@ -11,4 +11,4 @@
 // is fixed, and test through the public API instead.
 
 // Handles the canLaunch method call.
-FlMethodResponse* can_launch(FlUrlLauncherPlugin* self, FlValue* args);
+FlMethodResponse* can_launch(FlEnhancedUrlLauncherPlugin* self, FlValue* args);

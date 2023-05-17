@@ -16,11 +16,11 @@ import 'enhanced_url_launcher_web_test.mocks.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  group('UrlLauncherPlugin', () {
+  group('EnhancedUrlLauncherPlugin', () {
     late MockWindow mockWindow;
     late MockNavigator mockNavigator;
 
-    late UrlLauncherPlugin plugin;
+    late EnhancedUrlLauncherPlugin plugin;
 
     setUp(() {
       mockWindow = MockWindow();
@@ -33,7 +33,7 @@ void main() {
       when(mockNavigator.vendor).thenReturn('Google LLC');
       when(mockNavigator.appVersion).thenReturn('Mock version!');
 
-      plugin = UrlLauncherPlugin(debugWindow: mockWindow);
+      plugin = EnhancedUrlLauncherPlugin(debugWindow: mockWindow);
     });
 
     group('canLaunch', () {
@@ -152,7 +152,7 @@ void main() {
           when(mockNavigator.appVersion).thenReturn(
               '5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15');
           // Recreate the plugin, so it grabs the overrides from this group
-          plugin = UrlLauncherPlugin(debugWindow: mockWindow);
+          plugin = EnhancedUrlLauncherPlugin(debugWindow: mockWindow);
         });
 
         testWidgets('http urls should be launched in a new window',

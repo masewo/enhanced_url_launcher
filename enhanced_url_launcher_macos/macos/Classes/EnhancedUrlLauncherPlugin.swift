@@ -26,7 +26,7 @@ public protocol SystemURLHandler {
 
 extension NSWorkspace: SystemURLHandler {}
 
-public class UrlLauncherPlugin: NSObject, FlutterPlugin, UrlLauncherApi {
+public class EnhancedUrlLauncherPlugin: NSObject, FlutterPlugin, UrlLauncherApi {
 
   private var workspace: SystemURLHandler
 
@@ -35,7 +35,7 @@ public class UrlLauncherPlugin: NSObject, FlutterPlugin, UrlLauncherApi {
   }
 
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let instance = UrlLauncherPlugin()
+    let instance = EnhancedUrlLauncherPlugin()
     UrlLauncherApiSetup.setUp(binaryMessenger: registrar.messenger, api: instance)
   }
 
